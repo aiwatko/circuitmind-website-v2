@@ -18,14 +18,10 @@ const NavLink = styled(GatsbyLink)`
   text-decoration: none;
 `;
 
-interface Props {
-  siteTitle: string;
-}
-
-const Header: React.SFC<Props> = ({ siteTitle }) => (
+const Header: React.SFC = () => (
   <HeaderEl>
     <Nav>
-      <NavLink to="/">{siteTitle}</NavLink>
+      <NavLink to="/">logo placeholder</NavLink>
     </Nav>
   </HeaderEl>
 );

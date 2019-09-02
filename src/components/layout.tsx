@@ -6,19 +6,15 @@ import Header from './header';
 
 const Wrapper = styled.div`
   margin: 0 auto;
-  max-width: 960;
+  max-width: 960px;
   padding: 0px 1.0875rem 1.45rem;
   padding-top: 0;
 `;
 
-interface Props {
-  title: string;
-}
-
-const Layout: React.SFC<Props> = ({ children, title }) => (
+const Layout: React.SFC = ({ children }) => (
   <>
     <GlobalStyle />
-    <Header siteTitle={title} />
+    <Header />
     <Wrapper>
       <main>{children}</main>
     </Wrapper>

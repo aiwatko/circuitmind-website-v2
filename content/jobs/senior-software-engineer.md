@@ -1,4 +1,5 @@
 ---
+active: true
 title: Senior Software Engineer
 date: 2019-09-02T15:09:46.481Z
 description: >-

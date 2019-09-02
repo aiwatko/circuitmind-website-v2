@@ -14,11 +14,11 @@ collections:
     editor:
       preview: true
     fields:
+      - { label: 'Active', name: 'active', widget: 'boolean' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Active', name: 'active', widget: 'boolean' }
   - name: 'members'
     label: 'Team members'
     folder: 'content/members'

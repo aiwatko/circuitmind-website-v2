@@ -18,6 +18,7 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Active', name: 'active', widget: 'boolean' }
   - name: 'members'
     label: 'Team members'
     folder: 'content/members'
@@ -29,6 +30,7 @@ collections:
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }
+      - { label: 'Image', name: 'img', widget: 'image' }
   - name: 'pages'
     label: 'Pages'
     files:
@@ -51,8 +53,7 @@ collections:
               widget: 'string',
             }
           - { label: 'Address', name: 'address', widget: 'markdown' }
-          - { label: 'Address longitude', name: 'lng', widget: 'string' }
-          - { label: 'Address latitude', name: 'lat', widget: 'string' }
+          - { label: 'Address map', name: 'map', widget: 'map' }
           - {
               label: 'Contact subtitle',
               name: 'contact-subtitle',

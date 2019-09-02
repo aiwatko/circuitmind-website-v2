@@ -18,3 +18,44 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'members'
+    label: 'Team members'
+    folder: 'content/members'
+    create: true
+    slug: '{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Name', name: 'name', widget: 'string' }
+      - { label: 'Role', name: 'role', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
+  - name: 'pages'
+    label: 'Pages'
+    files:
+      - label: 'Mission page'
+        name: 'mission'
+        file: 'content/mission.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'markdown' }
+          - { label: 'Video', name: 'video', widget: 'string' }
+      - label: 'Contact Page'
+        name: 'contact'
+        file: 'content/contact.md'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Intro', name: 'intro', widget: 'markdown' }
+          - {
+              label: 'Address subtitle',
+              name: 'address-subtitle',
+              widget: 'string',
+            }
+          - { label: 'Address', name: 'address', widget: 'markdown' }
+          - { label: 'Address longitude', name: 'lng', widget: 'string' }
+          - { label: 'Address latitude', name: 'lat', widget: 'string' }
+          - {
+              label: 'Contact subtitle',
+              name: 'contact-subtitle',
+              widget: 'string',
+            }
+          - { label: 'Contact', name: 'contact', widget: 'string' }

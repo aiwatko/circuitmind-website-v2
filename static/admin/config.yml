@@ -36,6 +36,12 @@ collections:
   - name: 'pages'
     label: 'Pages'
     files:
+      - label: 'Home page'
+        name: 'home'
+        file: 'content/home.json'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Subtitle', name: 'subtitle', widget: 'string' }
       - label: 'Mission page'
         name: 'mission'
         file: 'content/mission.json'

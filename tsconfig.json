@@ -1,17 +1,15 @@
 {
-  "compileOnSave": true,
   "compilerOptions": {
-    "target": "es5",
     "module": "commonjs",
-    "lib": ["dom", "es2015", "es2017"],
-    "jsx": "react",
-    "sourceMap": true,
+    "target": "esnext",
+    "jsx": "preserve",
+    "lib": ["dom", "esnext"],
     "strict": true,
-    "noImplicitAny": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "allowSyntheticDefaultImports": true
+    "noEmit": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "noUnusedLocals": false
   },
-  "include": ["./src/**/*"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules", "public", ".cache"]
 }

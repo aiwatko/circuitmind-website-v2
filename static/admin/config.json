@@ -1,0 +1,93 @@
+{
+  "backend": { "name": "git-gateway", "branch": "master" },
+  "media_folder": "static/img",
+  "public_folder": "/img",
+  "collections": [
+    {
+      "name": "jobs",
+      "label": "Jobs",
+      "folder": "content/jobs",
+      "create": true,
+      "format": "json",
+      "slug": "{{slug}}",
+      "editor": { "preview": true },
+      "fields": [
+        { "label": "Active", "name": "active", "widget": "boolean" },
+        { "label": "Title", "name": "title", "widget": "string" },
+        { "label": "Publish Date", "name": "date", "widget": "datetime" },
+        {
+          "label": "Description",
+          "name": "description",
+          "widget": "string"
+        },
+        { "label": "Body", "name": "body", "widget": "markdown" }
+      ]
+    },
+    {
+      "name": "members",
+      "label": "Team members",
+      "folder": "content/members",
+      "format": "json",
+      "create": true,
+      "slug": "{{slug}}",
+      "editor": { "preview": true },
+      "fields": [
+        { "label": "Name", "name": "name", "widget": "string" },
+        { "label": "Role", "name": "role", "widget": "string" },
+        {
+          "label": "Description",
+          "name": "description",
+          "widget": "markdown"
+        },
+        { "label": "Image", "name": "img", "widget": "image" }
+      ]
+    },
+    {
+      "name": "pages",
+      "label": "Pages",
+      "files": [
+        {
+          "label": "Mission page",
+          "name": "mission",
+          "file": "content/mission.json",
+          "fields": [
+            { "label": "Title", "name": "title", "widget": "string" },
+            { "label": "Intro", "name": "intro", "widget": "markdown" },
+            { "label": "Video", "name": "video", "widget": "string" }
+          ]
+        },
+        {
+          "label": "Contact Page",
+          "name": "contact",
+          "file": "content/contact.json",
+          "fields": [
+            { "label": "Title", "name": "title", "widget": "string" },
+            {
+              "label": "Intro",
+              "name": "intro",
+              "widget": "markdown",
+              "required": false
+            },
+            {
+              "label": "Address subtitle",
+              "name": "address-subtitle",
+              "widget": "string"
+            },
+            {
+              "label": "Address",
+              "name": "address",
+              "widget": "markdown"
+            },
+            { "label": "Address map", "name": "map", "widget": "map" },
+            {
+              "label": "Contact subtitle",
+              "name": "contact-subtitle",
+              "widget": "string"
+            },
+            { "label": "Contact", "name": "contact", "widget": "string" }
+          ]
+        }
+      ]
+    }
+  ]
+}

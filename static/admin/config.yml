@@ -10,6 +10,7 @@ collections:
     label: 'Jobs'
     folder: 'content/jobs'
     create: true
+    format: 'json'
     slug: '{{slug}}'
     editor:
       preview: true
@@ -22,6 +23,7 @@ collections:
   - name: 'members'
     label: 'Team members'
     folder: 'content/members'
+    format: 'json'
     create: true
     slug: '{{slug}}'
     editor:
@@ -36,14 +38,14 @@ collections:
     files:
       - label: 'Mission page'
         name: 'mission'
-        file: 'content/mission.md'
+        file: 'content/mission.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Intro', name: 'intro', widget: 'markdown' }
           - { label: 'Video', name: 'video', widget: 'string' }
       - label: 'Contact Page'
         name: 'contact'
-        file: 'content/contact.md'
+        file: 'content/contact.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Intro', name: 'intro', widget: 'markdown' }

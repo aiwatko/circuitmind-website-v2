@@ -48,7 +48,12 @@ collections:
         file: 'content/contact.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Intro', name: 'intro', widget: 'markdown' }
+          - {
+              label: 'Intro',
+              name: 'intro',
+              widget: 'markdown',
+              required: 'false',
+            }
           - {
               label: 'Address subtitle',
               name: 'address-subtitle',

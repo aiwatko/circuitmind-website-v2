@@ -72,8 +72,10 @@ const CareersPage: React.SFC = () => {
           edges {
             node {
               childJobsJson {
+                active
                 title
-                description
+                intro
+                linkText
                 fields {
                   slug
                 }
@@ -91,16 +93,20 @@ const CareersPage: React.SFC = () => {
         <Title>Join us!</Title>
         <Wrapper>
           {data.map(job => {
-            const { title, description } = job.node.childJobsJson;
+            const {
+ active, title, intro, linkText 
+} = job.node.childJobsJson;
             const { slug } = job.node.childJobsJson.fields;
             return (
-              <CardWrapper>
-                <Card>
-                  <Subtitle>{title}</Subtitle>
-                  <Text>{description}</Text>
-                  <Link to={slug}>Read more about this role</Link>
-                </Card>
-              </CardWrapper>
+              active && (
+                <CardWrapper>
+                  <Card>
+                    <Subtitle>{title}</Subtitle>
+                    <Text>{intro}</Text>
+                    <Link to={slug}>{linkText}</Link>
+                  </Card>
+                </CardWrapper>
+              )
             );
           })}
         </Wrapper>

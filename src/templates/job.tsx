@@ -68,9 +68,7 @@ export const query = graphql`
     allJobsJson(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
-          active
           title
-          body
           description
           fields {
             slug

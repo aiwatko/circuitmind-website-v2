@@ -1,9 +1,8 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
 import Layout from '../components/layout';
-// @ts-ignore
-import data from '../../content/home.json';
 
 const Logo = styled.img`
   width: 150px;
@@ -51,16 +50,35 @@ const Main = styled.main`
   }
 `;
 
-const IndexPage: React.SFC = () => (
-  <Layout isLogoHidden>
-    <Main>
-      <Logo src='images/logo.svg' alt='Logo' />
-      <div>
-        <Title>{data.title}</Title>
-        <Subtitle>{data.subtitle}</Subtitle>
-      </div>
-    </Main>
-  </Layout>
-);
+const IndexPage: React.SFC = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allFile(filter: { sourceInstanceName: { eq: "pages" }, name: { eq: "home" } }) {
+          edges {
+            node {
+              childPagesJson {
+                title
+                subtitle
+              }
+            }
+          }
+        }
+      }
+    `,
+  ).allFile.edges[0].node.childPagesJson;
+
+  return (
+    <Layout isLogoHidden>
+      <Main>
+        <Logo src='images/logo.svg' alt='Logo' />
+        <div>
+          <Title>{data.title}</Title>
+          <Subtitle>{data.subtitle}</Subtitle>
+        </div>
+      </Main>
+    </Layout>
+  );
+};
 
 export default IndexPage;

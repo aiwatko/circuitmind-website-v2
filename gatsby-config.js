@@ -10,14 +10,22 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-typescript',
     'gatsby-plugin-netlify-cms',
+    'gatsby-transformer-json',
     // TODO: optimize how images are imported
-    // {
-    //   resolve: 'gatsby-source-filesystem',
-    //   options: {
-    //     name: 'images',
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/content/pages`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'jobs',
+        path: `${__dirname}/src/content/jobs`,
+      },
+    },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {

@@ -1,10 +1,9 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
 import Layout from '../components/layout';
-// @ts-ignore
-import data from '../../content/mission.json';
 
 const Main = styled.main`
   display: flex;
@@ -49,24 +48,44 @@ const Iframe = styled.iframe`
   border: 0;
 `;
 
-const MissionPage: React.SFC = () => (
-  <Layout>
-    <Main>
-      <Wrapper>
-        <Title>{data.title}</Title>
-        <Text>{data.intro}</Text>
-        <IframeWrapper>
-          <Iframe
-            title={data.videoDescription}
-            src={data.video}
-            frameBorder='0'
-            allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-            allowFullScreen
-          />
-        </IframeWrapper>
-      </Wrapper>
-    </Main>
-  </Layout>
-);
+const MissionPage: React.SFC = () => {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        allFile(filter: { sourceInstanceName: { eq: "pages" }, name: { eq: "mission" } }) {
+          edges {
+            node {
+              childPagesJson {
+                title
+                intro
+                video
+              }
+            }
+          }
+        }
+      }
+    `,
+  ).allFile.edges[0].node.childPagesJson;
+
+  return (
+    <Layout>
+      <Main>
+        <Wrapper>
+          <Title>{data.title}</Title>
+          <Text>{data.intro}</Text>
+          <IframeWrapper>
+            <Iframe
+              title={data.videoDescription}
+              src={data.video}
+              frameBorder='0'
+              allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+            />
+          </IframeWrapper>
+        </Wrapper>
+      </Main>
+    </Layout>
+  );
+};
 
 export default MissionPage;

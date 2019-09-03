@@ -1,5 +1,6 @@
 {
   "title": "Our mission",
   "intro": "Electronic circuit boards are at the core of current and future inventions - mobile phones, augmented reality, autonomous vehicles and spacecrafts. Yet today designing an electronic circuit board is an extremely manual, long and tedious process. At Circuit Mind we believe that this is wrong and we are on a mission to fix it, triggering the future of hardware design.",
-  "video": "https://www.youtube.com/watch?v=zctId7VLyjI"
+  "video": "https://www.youtube.com/embed/zctId7VLyjI",
+  "videoDescription": "EF 10 Demo Day - Circuit Mind"
 }

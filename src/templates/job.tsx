@@ -48,14 +48,14 @@ const Content = styled.div`
 `;
 
 const Job: React.SFC<Props> = ({ data }) => {
-  const { title, body } = data.allJobsJson.edges[0].node;
+  const { title, description } = data.allJobsJson.edges[0].node;
   return (
     <Layout>
       <Main>
         <Wrapper>
           <Content>
             <h1>{title}</h1>
-            <ReactMarkdown source={body} />
+            <ReactMarkdown source={description} />
           </Content>
         </Wrapper>
       </Main>

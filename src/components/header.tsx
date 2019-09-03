@@ -104,9 +104,9 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
       </HamburgerButton>
       <Nav isOpen={isOpen}>
         <NavLink to='/mission'>mission</NavLink>
-        <NavLink to='team.html'>team</NavLink>
-        <NavLink to='careers.html'>careers</NavLink>
-        <NavLink to='contact.html'>contact</NavLink>
+        <NavLink to='/team'>team</NavLink>
+        <NavLink to='/careers'>careers</NavLink>
+        <NavLink to='/contact'>contact</NavLink>
       </Nav>
     </HeaderEl>
   );

@@ -49,27 +49,15 @@ collections:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Intro', name: 'intro', widget: 'markdown' }
           - { label: 'Video', name: 'video', widget: 'string' }
+          - { label: 'Video description', name: 'videoDescription', widget: 'string' }
       - label: 'Contact Page'
         name: 'contact'
         file: 'content/contact.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-          - {
-              label: 'Intro',
-              name: 'intro',
-              widget: 'markdown',
-              required: false,
-            }
-          - {
-              label: 'Address subtitle',
-              name: 'address-subtitle',
-              widget: 'string',
-            }
+          - { label: 'Intro', name: 'intro', widget: 'markdown', required: false }
+          - { label: 'Address subtitle', name: 'addressSubtitle', widget: 'string' }
           - { label: 'Address', name: 'address', widget: 'markdown' }
           - { label: 'Address map', name: 'map', widget: 'map' }
-          - {
-              label: 'Contact subtitle',
-              name: 'contact-subtitle',
-              widget: 'string',
-            }
+          - { label: 'Contact subtitle', name: 'contactSubtitle', widget: 'string' }
           - { label: 'Contact', name: 'contact', widget: 'string' }

@@ -39,13 +39,27 @@ const Subtitle = styled.h2`
   }
 `;
 
-const IndexPage = () => (
+const Main = styled.main`
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+`;
+
+const IndexPage: React.SFC = () => (
   <Layout isLogoHidden>
-    <Logo src='images/logo.svg' alt='Logo' />
-    <div>
-      <Title>{data.title}</Title>
-      <Subtitle>{data.subtitle}</Subtitle>
-    </div>
+    <Main>
+      <Logo src='images/logo.svg' alt='Logo' />
+      <div>
+        <Title>{data.title}</Title>
+        <Subtitle>{data.subtitle}</Subtitle>
+      </div>
+    </Main>
   </Layout>
 );
 

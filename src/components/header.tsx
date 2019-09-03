@@ -2,6 +2,8 @@ import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+import Colors from '../materials/colors';
+
 interface Props {
   isLogoHidden?: boolean;
 }
@@ -48,7 +50,7 @@ const Nav = styled.nav<NavProps>`
   width: 100%;
   height: 100%;
   padding: 20px;
-  background: rgb(5, 29, 53);
+  background: rgb(${Colors.darkBlue});
   z-index: 3;
   transition: transform 0.5s ease-in-out;
   ${({ isOpen }) => (isOpen ? 'transform: translateX(0);' : 'transform: translateX(100%);')};
@@ -68,11 +70,11 @@ const NavLink = styled(Link)`
   padding: 10px 0;
   text-decoration: none;
   font-size: 25px;
-  color: white;
+  color: rgb(${Colors.white});
 
   &:visited,
   &:hover {
-    color: white;
+    color: rgb(${Colors.white});
   }
 
   @media only screen and (min-width: 600px) {
@@ -87,6 +89,9 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
 
   return (
     <HeaderEl>
+      {
+        // Leaving this div here keeps hamburger button always in the right corner
+      }
       <LogoWrapper>
         {!isLogoHidden && (
           <Link to='/'>
@@ -98,7 +103,7 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
         <img src='images/hamburger.svg' alt='Hamburger menu' />
       </HamburgerButton>
       <Nav isOpen={isOpen}>
-        <NavLink to='mission.html'>mission</NavLink>
+        <NavLink to='/mission'>mission</NavLink>
         <NavLink to='team.html'>team</NavLink>
         <NavLink to='careers.html'>careers</NavLink>
         <NavLink to='contact.html'>contact</NavLink>

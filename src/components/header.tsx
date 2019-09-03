@@ -2,6 +2,9 @@ import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+interface Props {
+  isLogoHidden?: boolean;
+}
 interface NavProps {
   isOpen: boolean;
 }
@@ -79,20 +82,22 @@ const NavLink = styled(Link)`
   }
 `;
 
-const Header: React.SFC = () => {
+const Header: React.SFC<Props> = ({ isLogoHidden }) => {
   const [isOpen, setOpen] = useState(false);
 
   return (
     <HeaderEl>
-      <LogoWrapper>
-        <Link to='/'>
-          <Logo src='images/logo.svg' alt='Logo' />
-        </Link>
-      </LogoWrapper>
-      <HamburgerButton className='header__hamburger' onClick={() => setOpen(!isOpen)}>
+      {!isLogoHidden && (
+        <LogoWrapper>
+          <Link to='/'>
+            <Logo src='images/logo.svg' alt='Logo' />
+          </Link>
+        </LogoWrapper>
+      )}
+      <HamburgerButton onClick={() => setOpen(!isOpen)}>
         <img src='images/hamburger.svg' alt='Hamburger menu' />
       </HamburgerButton>
-      <Nav className='header__links-container' isOpen={isOpen}>
+      <Nav isOpen={isOpen}>
         <NavLink to='mission.html'>mission</NavLink>
         <NavLink to='team.html'>team</NavLink>
         <NavLink to='careers.html'>careers</NavLink>

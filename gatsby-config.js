@@ -10,13 +10,14 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-typescript',
     'gatsby-plugin-netlify-cms',
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'images',
-        path: `${__dirname}/src/images`,
-      },
-    },
+    // TODO: optimize how images are imported
+    // {
+    //   resolve: 'gatsby-source-filesystem',
+    //   options: {
+    //     name: 'images',
+    //     path: `${__dirname}/src/images`,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -33,7 +34,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-fonts',
       options: {
         fonts: [
-          'lato:400,900', // you can also specify font weights and styles
+          'Nunito+Sans:300,900', // you can also specify font weights and styles
         ],
         display: 'swap',
       },

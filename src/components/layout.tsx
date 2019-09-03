@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import GlobalStyle from '../materials/globalStyle';
 import Header from './header';
 
+interface Props {
+  isLogoHidden?: boolean;
+}
+
 const Body = styled.body`
   margin: 0;
   padding: 0;
@@ -29,14 +33,26 @@ const Wrapper = styled.div`
   padding-top: 0;
 `;
 
-const Layout: React.SFC = ({ children }) => (
+const Main = styled.main`
+  display: flex;
+  min-height: 80vh;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+`;
+
+const Layout: React.SFC<Props> = ({ children, isLogoHidden }) => (
   <>
     <GlobalStyle />
     <Body>
       <Overlay>
         <Wrapper>
-          <Header />
-          <main>{children}</main>
+          <Header isLogoHidden={isLogoHidden} />
+          <Main>{children}</Main>
         </Wrapper>
       </Overlay>
     </Body>

@@ -95,12 +95,12 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
       <LogoWrapper>
         {!isLogoHidden && (
           <Link to='/'>
-            <Logo src='images/logo.svg' alt='Logo' />
+            <Logo src='/images/logo.svg' alt='Logo' />
           </Link>
         )}
       </LogoWrapper>
       <HamburgerButton onClick={() => setOpen(!isOpen)}>
-        <img src='images/hamburger.svg' alt='Hamburger menu' />
+        <img src='/images/hamburger.svg' alt='Hamburger menu' />
       </HamburgerButton>
       <Nav isOpen={isOpen}>
         <NavLink to='/mission'>mission</NavLink>

@@ -14,7 +14,7 @@ const Background = styled.div`
   padding: 0;
   min-height: 100vh;
   color: rgb(${Colors.white});
-  background-image: url('images/bg.jpg');
+  background-image: url('/images/bg.jpg');
   background-size: cover;
   background-position: center;
   font-size: 20px;

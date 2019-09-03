@@ -87,13 +87,13 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
 
   return (
     <HeaderEl>
-      {!isLogoHidden && (
-        <LogoWrapper>
+      <LogoWrapper>
+        {!isLogoHidden && (
           <Link to='/'>
             <Logo src='images/logo.svg' alt='Logo' />
           </Link>
-        </LogoWrapper>
-      )}
+        )}
+      </LogoWrapper>
       <HamburgerButton onClick={() => setOpen(!isOpen)}>
         <img src='images/hamburger.svg' alt='Hamburger menu' />
       </HamburgerButton>

@@ -18,8 +18,9 @@ collections:
       - { label: 'Active', name: 'active', widget: 'boolean' }
       - { label: 'Title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Body', name: 'body', widget: 'markdown' }
+      - { label: 'Intro', name: 'intro', widget: 'string' }
+      - { label: 'Intro link text', name: 'link-text', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'markdown' }
   - name: 'members'
     label: 'Team members'
     folder: 'src/content/members'

@@ -71,7 +71,7 @@ const IndexPage: React.SFC = () => {
   return (
     <Layout isLogoHidden>
       <Main>
-        <Logo src='images/logo.svg' alt='Logo' />
+        <Logo src='img/logo.svg' alt='Logo' />
         <div>
           <Title>{data.title}</Title>
           <Subtitle>{data.subtitle}</Subtitle>

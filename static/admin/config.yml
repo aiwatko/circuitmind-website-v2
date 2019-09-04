@@ -29,6 +29,7 @@ collections:
     slug: '{{slug}}'
     editor:
       preview: true
+    identifier_field: 'name'
     fields:
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Role', name: 'role', widget: 'string' }

@@ -5,6 +5,13 @@ import styled from 'styled-components';
 import Colors from '../materials/colors';
 import Layout from '../components/Layout';
 
+interface Data {
+  title: string;
+  intro: string;
+  video: string;
+  videoDescription: string;
+}
+
 const Main = styled.main`
   display: flex;
   align-items: flex-start;
@@ -49,7 +56,7 @@ const Iframe = styled.iframe`
 `;
 
 const MissionPage: React.SFC = () => {
-  const data = useStaticQuery(
+  const data: Data = useStaticQuery(
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "pages" }, name: { eq: "mission" } }) {
@@ -59,6 +66,7 @@ const MissionPage: React.SFC = () => {
                 title
                 intro
                 video
+                videoDescription
               }
             }
           }
@@ -67,16 +75,19 @@ const MissionPage: React.SFC = () => {
     `,
   ).allFile.edges[0].node.childPagesJson;
 
+  const {
+ title, intro, videoDescription, video 
+} = data;
   return (
     <Layout>
       <Main>
         <Wrapper>
-          <Title>{data.title}</Title>
-          <Text>{data.intro}</Text>
+          <Title>{title}</Title>
+          <Text>{intro}</Text>
           <IframeWrapper>
             <Iframe
-              title={data.videoDescription}
-              src={data.video}
+              title={videoDescription}
+              src={video}
               frameBorder='0'
               allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
               allowFullScreen

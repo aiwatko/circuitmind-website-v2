@@ -8,6 +8,15 @@ import Link from '../components/Link';
 import Layout from '../components/Layout';
 import Map from '../components/Map';
 
+interface Data {
+  title: string;
+  map: string;
+  addressSubtitle: string;
+  address: string;
+  contact: string;
+  contactSubtitle: string;
+}
+
 const Main = styled.main`
   display: flex;
   align-items: flex-start;
@@ -59,7 +68,7 @@ const AddressParagraph = styled.p`
 `;
 
 const ContactPage: React.SFC = () => {
-  const data = useStaticQuery(
+  const data: Data = useStaticQuery(
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "pages" }, name: { eq: "contact" } }) {
@@ -84,7 +93,7 @@ const ContactPage: React.SFC = () => {
  title, map, addressSubtitle, address, contactSubtitle, contact 
 } = data;
 
-  const [lng, lat] = JSON.parse(map).coordinates;
+  const [lng, lat] = JSON.parse(map).coordinates as number[];
 
   return (
     <Layout>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// @ts-ignore : I didn't find typings for this page
 const HTML = props => (
   <html lang='en' {...props.htmlAttributes}>
     <head>

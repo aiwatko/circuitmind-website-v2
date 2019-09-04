@@ -4,6 +4,11 @@ import styled from 'styled-components';
 
 import Layout from '../components/Layout';
 
+interface Data {
+  title: string;
+  subtitle: string;
+}
+
 const Logo = styled.img`
   width: 150px;
   margin-right: 20px;
@@ -51,7 +56,7 @@ const Main = styled.main`
 `;
 
 const IndexPage: React.SFC = () => {
-  const data = useStaticQuery(
+  const data: Data = useStaticQuery(
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "pages" }, name: { eq: "home" } }) {
@@ -68,13 +73,15 @@ const IndexPage: React.SFC = () => {
     `,
   ).allFile.edges[0].node.childPagesJson;
 
+  const { title, subtitle } = data;
+
   return (
     <Layout isLogoHidden>
       <Main>
         <Logo src='img/logo.svg' alt='Logo' />
         <div>
-          <Title>{data.title}</Title>
-          <Subtitle>{data.subtitle}</Subtitle>
+          <Title>{title}</Title>
+          <Subtitle>{subtitle}</Subtitle>
         </div>
       </Main>
     </Layout>

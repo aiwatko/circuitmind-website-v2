@@ -5,6 +5,18 @@ import styled from 'styled-components';
 import Colors from '../materials/colors';
 import Layout from '../components/Layout';
 
+type Data = {
+  node: {
+    childMembersJson: {
+      order: string;
+      name: string;
+      role: string;
+      description: string;
+      img: string;
+    };
+  };
+}[];
+
 const Main = styled.main`
   display: flex;
   min-height: 80vh;
@@ -66,7 +78,7 @@ const Image = styled.img`
 `;
 
 const TeamPage: React.SFC = () => {
-  const data = useStaticQuery(
+  const data: Data = useStaticQuery(
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "members" } }) {
@@ -86,15 +98,13 @@ const TeamPage: React.SFC = () => {
     `,
   ).allFile.edges;
 
-  console.log(data);
-
   return (
     <Layout>
       <Main>
         <Wrapper>
           <Title>Team</Title>
           {data
-            .sort((a, b) => a.node.childMembersJson.order - b.node.childMembersJson.order)
+            .sort((a, b) => Number(a.node.childMembersJson.order) - Number(b.node.childMembersJson.order))
             .map(member => {
               const {
  name, role, description, img 

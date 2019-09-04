@@ -6,6 +6,20 @@ import Colors from '../materials/colors';
 import Layout from '../components/Layout';
 import Link from '../components/Link';
 
+type Data = {
+  node: {
+    childJobsJson: {
+      active: boolean;
+      title: string;
+      intro: string;
+      linkText: string;
+      fields: {
+        slug: string;
+      };
+    };
+  };
+}[];
+
 const Main = styled.main`
   display: flex;
   min-height: 80vh;
@@ -57,7 +71,7 @@ const CardContent = styled.div`
 `;
 
 const CareersPage: React.SFC = () => {
-  const data = useStaticQuery(
+  const data: Data = useStaticQuery(
     graphql`
       query {
         allFile(filter: { sourceInstanceName: { eq: "jobs" } }) {

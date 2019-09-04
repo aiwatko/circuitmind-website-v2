@@ -31,6 +31,7 @@ collections:
       preview: true
     identifier_field: 'name'
     fields:
+      - { label: 'Order on the website', name: 'order', widget: 'select', options: [0, 1, 2, 3, 4, 5] }
       - { label: 'Name', name: 'name', widget: 'string' }
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }

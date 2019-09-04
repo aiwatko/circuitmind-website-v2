@@ -73,6 +73,7 @@ const TeamPage: React.SFC = () => {
           edges {
             node {
               childMembersJson {
+                order
                 name
                 role
                 description
@@ -85,26 +86,30 @@ const TeamPage: React.SFC = () => {
     `,
   ).allFile.edges;
 
+  console.log(data);
+
   return (
     <Layout>
       <Main>
         <Wrapper>
           <Title>Team</Title>
-          {data.map(member => {
-            const {
+          {data
+            .sort((a, b) => a.node.childMembersJson.order - b.node.childMembersJson.order)
+            .map(member => {
+              const {
  name, role, description, img 
 } = member.node.childMembersJson;
-            return (
-              <Card>
-                <Subtitle>{name}</Subtitle>
-                <Subtitle>{role}</Subtitle>
-                <CardContent>
-                  <Image src={img} alt={name} />
-                  <Text>{description}</Text>
-                </CardContent>
-              </Card>
-            );
-          })}
+              return (
+                <Card>
+                  <Subtitle>{name}</Subtitle>
+                  <Subtitle>{role}</Subtitle>
+                  <CardContent>
+                    <Image src={img} alt={name} />
+                    <Text>{description}</Text>
+                  </CardContent>
+                </Card>
+              );
+            })}
         </Wrapper>
       </Main>
     </Layout>

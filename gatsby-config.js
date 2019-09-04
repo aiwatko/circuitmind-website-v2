@@ -11,6 +11,7 @@ module.exports = {
     'gatsby-plugin-typescript',
     'gatsby-plugin-netlify-cms',
     'gatsby-transformer-json',
+    'gatsby-plugin-styled-components',
     // TODO: optimize how images are imported
     {
       resolve: 'gatsby-source-filesystem',

@@ -2,7 +2,7 @@
   "title": "Get in touch",
   "intro": "to be made optional",
   "addressSubtitle": "Visit us",
-  "address": "Unit 418\nMetal Box Factory\n30 Great Guilford Street\nLondon\nSE1 0HS",
+  "address": "Unit 418\n\nMetal Box Factory\n\n30 Great Guilford Street\n\nLondon\n\nSE1 0HS",
   "map": "{\"type\":\"Point\",\"coordinates\":[-0.0970229,51.5046857]}",
   "contactSubtitle": "Email us",
   "contact": "tomide@circuitmind.io"

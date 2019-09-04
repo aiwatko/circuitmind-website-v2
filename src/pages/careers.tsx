@@ -3,7 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Link from '../components/Link';
 
 const Main = styled.main`
@@ -45,7 +45,7 @@ const Text = styled.p``;
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding: 40px 30px;
   color: white;
   background: rgba(${Colors.white}, 0.2);
 `;
@@ -86,9 +86,7 @@ const CareersPage: React.SFC = () => {
         <Wrapper>
           <Title>Join us!</Title>
           {data.map(job => {
-            const {
- active, title, intro, linkText 
-} = job.node.childJobsJson;
+            const { active, title, intro, linkText } = job.node.childJobsJson;
             const { slug } = job.node.childJobsJson.fields;
             return (
               active && (
@@ -96,7 +94,9 @@ const CareersPage: React.SFC = () => {
                   <Subtitle>{title}</Subtitle>
                   <CardContent>
                     <Text>{intro}</Text>
-                    <Link to={slug}>{linkText}</Link>
+                    <Link isInternal to={slug}>
+                      {linkText}
+                    </Link>
                   </CardContent>
                 </Card>
               )

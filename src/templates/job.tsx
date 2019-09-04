@@ -4,7 +4,7 @@ import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 
 interface Props {
   data: {
@@ -38,7 +38,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: baseline;
   width: 100%;
-  padding: 30px 0;
+  padding: 40px 0;
   background: rgba(${Colors.white}, 0.2);
 `;
 

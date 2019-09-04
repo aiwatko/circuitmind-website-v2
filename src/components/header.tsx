@@ -88,7 +88,7 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
       }
       <LogoWrapper>
         {!isLogoHidden && (
-          <Link to='/'>
+          <Link isInternal to='/'>
             <Logo src='/images/logo.svg' alt='Logo' />
           </Link>
         )}
@@ -97,10 +97,18 @@ const Header: React.SFC<Props> = ({ isLogoHidden }) => {
         <img src='/images/hamburger.svg' alt='Hamburger menu' />
       </HamburgerButton>
       <Nav isOpen={isOpen}>
-        <NavLink to='/mission'>mission</NavLink>
-        <NavLink to='/team'>team</NavLink>
-        <NavLink to='/careers'>careers</NavLink>
-        <NavLink to='/contact'>contact</NavLink>
+        <NavLink isInternal to='/mission'>
+          mission
+        </NavLink>
+        <NavLink isInternal to='/team'>
+          team
+        </NavLink>
+        <NavLink isInternal to='/careers'>
+          careers
+        </NavLink>
+        <NavLink isInternal to='/contact'>
+          contact
+        </NavLink>
       </Nav>
     </HeaderEl>
   );

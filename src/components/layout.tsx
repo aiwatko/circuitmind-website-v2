@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import GlobalStyle from '../materials/globalStyle';
-import Header from './header';
+import Header from './Header';
 import Colors from '../materials/colors';
 
 interface Props {

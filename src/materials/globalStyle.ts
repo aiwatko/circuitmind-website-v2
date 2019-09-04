@@ -17,6 +17,7 @@ main {
 h1 {
   font-size: 2em;
   margin: 0;
+  line-height: 1
 }
 
 hr {

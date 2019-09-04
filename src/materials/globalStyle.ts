@@ -3,6 +3,7 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
   }
 
 body {
@@ -19,7 +20,6 @@ h1 {
 }
 
 hr {
-  box-sizing: content-box;
   height: 0;
   overflow: visible;
 }
@@ -132,7 +132,6 @@ fieldset {
 
 
 legend {
-  box-sizing: border-box;
   color: inherit;
   display: table;
   max-width: 100%;
@@ -152,7 +151,6 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-  box-sizing: border-box;
   padding: 0;
 }
 

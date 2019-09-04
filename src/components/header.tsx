@@ -1,8 +1,8 @@
-import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
+import Link from './Link';
 
 interface Props {
   isLogoHidden?: boolean;
@@ -70,12 +70,6 @@ const NavLink = styled(Link)`
   padding: 10px 0;
   text-decoration: none;
   font-size: 25px;
-  color: rgb(${Colors.white});
-
-  &:visited,
-  &:hover {
-    color: rgb(${Colors.white});
-  }
 
   @media only screen and (min-width: 600px) {
     padding: 0;

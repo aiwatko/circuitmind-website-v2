@@ -1,26 +1,29 @@
-import { graphql, useStaticQuery, Link } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
 import Layout from '../components/layout';
+import Link from '../components/Link';
 
 const Main = styled.main`
   display: flex;
   min-height: 80vh;
   align-items: flex-start;
   justify-content: center;
+  margin-top: 20px;
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  align-items: flex-start;
-  flex-wrap: wrap;
   width: 100%;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
 
   @media only screen and (min-width: 600px) {
-    flex-direction: row;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -34,34 +37,24 @@ const Title = styled.h1`
   white-space: nowrap;
 `;
 
-const Subtitle = styled.h2``;
-const Text = styled.p``;
-
-const CardWrapper = styled.div`
-  width: 100%;
-
-  &:nth-of-type(2n) {
-    padding-left: 0;
-  }
-
-  @media only screen and (min-width: 600px) {
-    width: 50%;
-
-    &:nth-of-type(2n) {
-      padding-left: 20px;
-    }
-  }
+const Subtitle = styled.h2`
+  margin: 0;
 `;
+const Text = styled.p``;
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 20px;
-  min-height: 450px;
+  padding: 30px;
   color: white;
   background: rgba(${Colors.white}, 0.2);
+`;
+
+const CardContent = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 const CareersPage: React.SFC = () => {
@@ -90,8 +83,8 @@ const CareersPage: React.SFC = () => {
   return (
     <Layout>
       <Main>
-        <Title>Join us!</Title>
         <Wrapper>
+          <Title>Join us!</Title>
           {data.map(job => {
             const {
  active, title, intro, linkText 
@@ -99,13 +92,13 @@ const CareersPage: React.SFC = () => {
             const { slug } = job.node.childJobsJson.fields;
             return (
               active && (
-                <CardWrapper>
-                  <Card>
-                    <Subtitle>{title}</Subtitle>
+                <Card>
+                  <Subtitle>{title}</Subtitle>
+                  <CardContent>
                     <Text>{intro}</Text>
                     <Link to={slug}>{linkText}</Link>
-                  </Card>
-                </CardWrapper>
+                  </CardContent>
+                </Card>
               )
             );
           })}

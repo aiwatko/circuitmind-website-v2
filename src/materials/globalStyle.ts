@@ -32,6 +32,10 @@ pre {
 
 a {
   background-color: transparent;
+
+  &:focus {
+    outline: solid 1px goldenrod;
+  }
 }
 
 abbr[title] {

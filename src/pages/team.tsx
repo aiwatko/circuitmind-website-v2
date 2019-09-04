@@ -4,7 +4,6 @@ import styled from 'styled-components';
 
 import Colors from '../materials/colors';
 import Layout from '../components/Layout';
-import Link from '../components/Link';
 
 const Main = styled.main`
   display: flex;
@@ -40,12 +39,14 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
   margin: 0;
 `;
+
 const Text = styled.p``;
 
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 40px 30px;
+  padding: 40px 20px;
+  text-align: center;
   background: rgba(${Colors.white}, 0.2);
 `;
 
@@ -53,24 +54,29 @@ const CardContent = styled.div`
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
 `;
 
-const CareersPage: React.SFC = () => {
+const Image = styled.img`
+  max-width: 200px;
+  border-radius: 50%;
+  filter: sepia(70%);
+`;
+
+const TeamPage: React.SFC = () => {
   const data = useStaticQuery(
     graphql`
       query {
-        allFile(filter: { sourceInstanceName: { eq: "jobs" } }) {
+        allFile(filter: { sourceInstanceName: { eq: "members" } }) {
           edges {
             node {
-              childJobsJson {
-                active
-                title
-                intro
-                linkText
-                fields {
-                  slug
-                }
+              childMembersJson {
+                name
+                role
+                description
+                img
               }
             }
           }
@@ -83,24 +89,20 @@ const CareersPage: React.SFC = () => {
     <Layout>
       <Main>
         <Wrapper>
-          <Title>Join us!</Title>
-          {data.map(job => {
+          <Title>Team</Title>
+          {data.map(member => {
             const {
- active, title, intro, linkText 
-} = job.node.childJobsJson;
-            const { slug } = job.node.childJobsJson.fields;
+ name, role, description, img 
+} = member.node.childMembersJson;
             return (
-              active && (
-                <Card>
-                  <Subtitle>{title}</Subtitle>
-                  <CardContent>
-                    <Text>{intro}</Text>
-                    <Link isInternal to={slug}>
-                      {linkText}
-                    </Link>
-                  </CardContent>
-                </Card>
-              )
+              <Card>
+                <Subtitle>{name}</Subtitle>
+                <Subtitle>{role}</Subtitle>
+                <CardContent>
+                  <Image src={img} alt={name} />
+                  <Text>{description}</Text>
+                </CardContent>
+              </Card>
             );
           })}
         </Wrapper>
@@ -109,4 +111,4 @@ const CareersPage: React.SFC = () => {
   );
 };
 
-export default CareersPage;
+export default TeamPage;

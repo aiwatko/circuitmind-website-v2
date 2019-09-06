@@ -23,6 +23,13 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'widgets',
+        path: `${__dirname}/src/content/widgets`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'members',
         path: `${__dirname}/src/content/members`,
       },

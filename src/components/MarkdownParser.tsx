@@ -1,11 +1,11 @@
-import React, { ReactElement } from 'react';
-import ReactMarkdown from 'react-markdown';
+import React from 'react';
+import ReactMarkdown, { NodeType } from 'react-markdown';
 
 import Link from './Link';
 
 interface Props {
   source: string;
-  renderers: Record<string, ReactElement>;
+  renderers?: Record<NodeType, React.ElementType<any>>;
 }
 
 const defaultRenderers = {

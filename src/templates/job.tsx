@@ -19,6 +19,16 @@ interface Props {
         };
       }[];
     };
+    allFiles: {
+      edges: {
+        node: {
+          childWidgetsJson: {
+            title: string;
+            text: string;
+          };
+        };
+      }[];
+    };
   };
 }
 
@@ -49,6 +59,7 @@ const Content = styled.div`
 
 const Job: React.SFC<Props> = ({ data }) => {
   const { title, description } = data.allJobsJson.edges[0].node;
+  const jobApplicationTeaser = data.allFile.edges[0].node.childWidgetsJson;
   return (
     <Layout>
       <Main>
@@ -56,6 +67,8 @@ const Job: React.SFC<Props> = ({ data }) => {
           <Content>
             <h1>{title}</h1>
             <MarkdownParser source={description} />
+            <h2>{jobApplicationTeaser.title}</h2>
+            <MarkdownParser source={jobApplicationTeaser.text} />
           </Content>
         </Wrapper>
       </Main>
@@ -72,6 +85,16 @@ export const query = graphql`
           description
           fields {
             slug
+          }
+        }
+      }
+    }
+    allFile(filter: { sourceInstanceName: { eq: "widgets" }, name: { eq: "jobApplicationTeaser" } }) {
+      edges {
+        node {
+          childWidgetsJson {
+            title
+            text
           }
         }
       }

@@ -89,7 +89,9 @@ const ContactPage: React.SFC = () => {
     `,
   ).allFile.edges[0].node.childPagesJson;
 
-  const { title, map, addressSubtitle, address, contactSubtitle, contact } = data;
+  const {
+ title, map, addressSubtitle, address, contactSubtitle, contact 
+} = data;
 
   const [lng, lat] = JSON.parse(map).coordinates as number[];
 

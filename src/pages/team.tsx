@@ -110,7 +110,7 @@ const TeamPage: React.SFC = () => {
  name, role, description, img 
 } = member.node.childMembersJson;
               return (
-                <Card>
+                <Card key={name}>
                   <Subtitle>{name}</Subtitle>
                   <Subtitle>{role}</Subtitle>
                   <CardContent>

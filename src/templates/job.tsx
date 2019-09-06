@@ -19,7 +19,7 @@ interface Props {
         };
       }[];
     };
-    allFiles: {
+    allFile: {
       edges: {
         node: {
           childWidgetsJson: {

@@ -105,7 +105,7 @@ const CareersPage: React.SFC = () => {
             const { slug } = job.node.childJobsJson.fields;
             return (
               active && (
-                <Card>
+                <Card key={slug}>
                   <Subtitle>{title}</Subtitle>
                   <CardContent>
                     <Text>{intro}</Text>

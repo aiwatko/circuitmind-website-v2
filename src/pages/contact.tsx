@@ -1,12 +1,12 @@
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
 import Link from '../components/Link';
 import Layout from '../components/Layout';
 import Map from '../components/Map';
+import MarkdownParser from '../components/MarkdownParser';
 
 interface Data {
   title: string;
@@ -89,9 +89,7 @@ const ContactPage: React.SFC = () => {
     `,
   ).allFile.edges[0].node.childPagesJson;
 
-  const {
- title, map, addressSubtitle, address, contactSubtitle, contact 
-} = data;
+  const { title, map, addressSubtitle, address, contactSubtitle, contact } = data;
 
   const [lng, lat] = JSON.parse(map).coordinates as number[];
 
@@ -104,7 +102,7 @@ const ContactPage: React.SFC = () => {
             <Content>
               <div>
                 <Subtitle>{addressSubtitle}</Subtitle>
-                <ReactMarkdown source={address} renderers={{ paragraph: AddressParagraph }} />
+                <MarkdownParser source={address} renderers={{ paragraph: AddressParagraph }} />
                 <Link href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get directions</Link>
               </div>
               <div>

@@ -1,10 +1,10 @@
 import { graphql } from 'gatsby';
 import React from 'react';
-import ReactMarkdown from 'react-markdown';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
 import Layout from '../components/Layout';
+import MarkdownParser from '../components/MarkdownParser';
 
 interface Props {
   data: {
@@ -55,7 +55,7 @@ const Job: React.SFC<Props> = ({ data }) => {
         <Wrapper>
           <Content>
             <h1>{title}</h1>
-            <ReactMarkdown source={description} />
+            <MarkdownParser source={description} />
           </Content>
         </Wrapper>
       </Main>

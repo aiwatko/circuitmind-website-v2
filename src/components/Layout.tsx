@@ -31,8 +31,7 @@ const Overlay = styled.div`
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 760px;
-  padding: 0 ${Spacing.m};
-  padding-top: 0;
+  padding: 0 ${Spacing.m} ${Spacing.m} ${Spacing.m};
 `;
 
 const Layout: React.SFC<Props> = ({ children, isLogoHidden }) => (

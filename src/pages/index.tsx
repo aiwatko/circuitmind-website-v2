@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+import Spacing from '../materials/spacing';
 import Layout from '../components/Layout';
 
 interface Data {
@@ -11,13 +12,13 @@ interface Data {
 
 const Logo = styled.img`
   width: 150px;
-  margin-right: 20px;
-  margin-top: -40px;
+  margin-right: ${Spacing.m};
+  margin-top: -${Spacing.xl};
 `;
 
 const Title = styled.h1`
   line-height: 0.85;
-  margin: 20px 0;
+  margin: ${Spacing.m} 0;
   font-size: 70px;
   text-align: center;
   font-weight: bold;

@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+import Spacing from '../materials/spacing';
 import Link from '../components/Link';
 import Layout from '../components/Layout';
 import Map from '../components/Map';
@@ -23,7 +24,7 @@ const Main = styled.main`
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: ${Spacing.m};
 `;
 
 const Wrapper = styled.div`
@@ -31,7 +32,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  padding: 0 20px;
+  padding: 0 ${Spacing.m};
 `;
 
 const ContentWrapper = styled.div`
@@ -39,8 +40,8 @@ const ContentWrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: ${Spacing.m};
+  grid-row-gap: ${Spacing.m};
 
   @media only screen and (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
@@ -52,7 +53,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 30px;
+  margin-top: ${Spacing.lg};
 `;
 
 const Title = styled.h1``;

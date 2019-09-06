@@ -2,7 +2,7 @@ import { graphql } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import Colors from '../materials/colors';
+import Spacing from '../materials/spacing';
 import Layout from '../components/Layout';
 import MarkdownParser from '../components/MarkdownParser';
 import Narrative from '../components/Narrative';
@@ -40,7 +40,7 @@ const Main = styled.main`
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: ${Spacing.m};
   color: white;
 `;
 
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  padding: 0 20px;
+  padding: 0 ${Spacing.m};
 `;
 
 const Job: React.SFC<Props> = ({ data }) => {

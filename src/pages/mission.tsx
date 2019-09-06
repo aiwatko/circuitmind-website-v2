@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
+import Spacing from '../materials/spacing';
 import Layout from '../components/Layout';
 import Narrative from '../components/Narrative';
 import PageContent from '../components/PageContent';
@@ -19,7 +20,7 @@ const Main = styled.main`
   justify-content: center;
   width: 100%;
   height: 100%;
-  margin-top: 20px;
+  margin-top: ${Spacing.m};
 `;
 
 const Wrapper = styled.div`

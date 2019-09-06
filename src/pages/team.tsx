@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
+import Spacing from '../materials/spacing';
 import Layout from '../components/Layout';
 
 type Data = {
@@ -22,7 +23,7 @@ const Main = styled.main`
   min-height: 80vh;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: ${Spacing.m};
 `;
 
 const Wrapper = styled.div`
@@ -30,8 +31,8 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: auto;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+  grid-column-gap: ${Spacing.m};
+  grid-row-gap: ${Spacing.m};
 
   @media only screen and (min-width: 600px) {
     grid-template-columns: 1fr 1fr;
@@ -57,7 +58,7 @@ const Text = styled.p``;
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 40px 20px;
+  padding: ${Spacing.xl} ${Spacing.m};
   text-align: center;
   background: rgba(${Colors.white}, 0.2);
 `;
@@ -68,7 +69,7 @@ const CardContent = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 20px;
+  margin-top: ${Spacing.m};
 `;
 
 const Image = styled.img`

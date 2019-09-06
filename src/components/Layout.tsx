@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import GlobalStyle from '../materials/globalStyle';
 import Header from './Header';
 import Colors from '../materials/colors';
+import Spacing from '../materials/spacing';
 
 interface Props {
   isLogoHidden?: boolean;
@@ -30,7 +31,7 @@ const Overlay = styled.div`
 const Wrapper = styled.div`
   margin: 0 auto;
   max-width: 760px;
-  padding: 0px 1.0875rem 1.45rem;
+  padding: 0 ${Spacing.m};
   padding-top: 0;
 `;
 

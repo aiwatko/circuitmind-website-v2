@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Colors from '../materials/colors';
+import Spacing from '../materials/spacing';
 import Link from './Link';
 
 interface Props {
@@ -49,7 +50,7 @@ const Nav = styled.nav<NavProps>`
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: ${Spacing.m};
   background: rgb(${Colors.darkBlue});
   z-index: 3;
   transition: transform 0.5s ease-in-out;
@@ -66,14 +67,14 @@ const Nav = styled.nav<NavProps>`
 `;
 
 const NavLink = styled(Link)`
-  margin: 10px 0;
-  padding: 10px 0;
+  margin: ${Spacing.xs} 0;
+  padding: ${Spacing.xs} 0;
   text-decoration: none;
   font-size: 25px;
 
   @media only screen and (min-width: 600px) {
     padding: 0;
-    margin: 0 0 0 20px;
+    margin: 0 0 0 ${Spacing.m};
     font-size: 20px;
   }
 `;

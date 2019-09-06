@@ -6,8 +6,8 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: 'jobs'
-    label: 'Jobs'
+  - label: 'Jobs'
+    name: 'jobs'
     folder: 'src/content/jobs'
     create: true
     format: 'json'
@@ -21,8 +21,8 @@ collections:
       - { label: 'Intro', name: 'intro', widget: 'string' }
       - { label: 'Intro link text', name: 'linkText', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }
-  - name: 'members'
-    label: 'Team members'
+  - label: 'Team members'
+    name: 'members'
     folder: 'src/content/members'
     format: 'json'
     create: true
@@ -36,8 +36,8 @@ collections:
       - { label: 'Role', name: 'role', widget: 'string' }
       - { label: 'Description', name: 'description', widget: 'markdown' }
       - { label: 'Image', name: 'img', widget: 'image' }
-  - name: 'pages'
-    label: 'Pages'
+  - label: 'Pages'
+    name: 'pages'
     files:
       - label: 'Home page'
         name: 'home'
@@ -64,3 +64,12 @@ collections:
           - { label: 'Address map', name: 'map', widget: 'map' }
           - { label: 'Contact subtitle', name: 'contactSubtitle', widget: 'string' }
           - { label: 'Contact', name: 'contact', widget: 'string' }
+  - label: 'Widgets'
+    name: 'widgets'
+    files:
+      - label: 'Job application teaser'
+        name: 'jobApplicationTeaser'
+        file: 'src/content/widgets/jobApplicationTeaser.json'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Text', name: 'text', widget: 'markdown' }

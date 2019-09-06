@@ -5,6 +5,8 @@ import styled from 'styled-components';
 import Colors from '../materials/colors';
 import Layout from '../components/Layout';
 import MarkdownParser from '../components/MarkdownParser';
+import Narrative from '../components/Narrative';
+import PageContent from '../components/PageContent';
 
 interface Props {
   data: {
@@ -47,14 +49,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  width: 100%;
-  padding: 40px 0;
-  background: rgba(${Colors.white}, 0.2);
-`;
-
-const Content = styled.div`
   padding: 0 20px;
-  max-width: 650px;
 `;
 
 const Job: React.SFC<Props> = ({ data }) => {
@@ -63,14 +58,16 @@ const Job: React.SFC<Props> = ({ data }) => {
   return (
     <Layout>
       <Main>
-        <Wrapper>
-          <Content>
-            <h1>{title}</h1>
-            <MarkdownParser source={description} />
-            <h2>{jobApplicationTeaser.title}</h2>
-            <MarkdownParser source={jobApplicationTeaser.text} />
-          </Content>
-        </Wrapper>
+        <PageContent>
+          <Wrapper>
+            <Narrative>
+              <h1>{title}</h1>
+              <MarkdownParser source={description} />
+              <h2>{jobApplicationTeaser.title}</h2>
+              <MarkdownParser source={jobApplicationTeaser.text} />
+            </Narrative>
+          </Wrapper>
+        </PageContent>
       </Main>
     </Layout>
   );

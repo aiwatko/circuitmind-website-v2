@@ -2,11 +2,11 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import Colors from '../materials/colors';
 import Link from '../components/Link';
 import Layout from '../components/Layout';
 import Map from '../components/Map';
 import MarkdownParser from '../components/MarkdownParser';
+import PageContent from '../components/PageContent';
 
 interface Data {
   title: string;
@@ -31,9 +31,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  width: 100%;
-  padding: 40px 0;
-  background: rgba(${Colors.white}, 0.2);
+  padding: 0 20px;
 `;
 
 const ContentWrapper = styled.div`
@@ -54,7 +52,7 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 30px 30px 0 30px;
+  margin-top: 30px;
 `;
 
 const Title = styled.h1``;
@@ -98,25 +96,27 @@ const ContactPage: React.SFC = () => {
   return (
     <Layout>
       <Main>
-        <Wrapper>
-          <Title>{title}</Title>
-          <ContentWrapper>
-            <Content>
-              <div>
-                <Subtitle>{addressSubtitle}</Subtitle>
-                <MarkdownParser source={address} renderers={{ paragraph: AddressParagraph }} />
-                <Link href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get directions</Link>
-              </div>
-              <div>
-                <Subtitle>{contactSubtitle}</Subtitle>
-                <Link href={`mailto:${contact}`}>{contact}</Link>
-              </div>
-            </Content>
-            <Content>
-              <Map lng={lng} lat={lat} zoom={13} />
-            </Content>
-          </ContentWrapper>
-        </Wrapper>
+        <PageContent>
+          <Wrapper>
+            <Title>{title}</Title>
+            <ContentWrapper>
+              <Content>
+                <div>
+                  <Subtitle>{addressSubtitle}</Subtitle>
+                  <MarkdownParser source={address} renderers={{ paragraph: AddressParagraph }} />
+                  <Link href={`https://www.google.com/maps/search/?api=1&query=${lat},${lng}`}>Get directions</Link>
+                </div>
+                <div>
+                  <Subtitle>{contactSubtitle}</Subtitle>
+                  <Link href={`mailto:${contact}`}>{contact}</Link>
+                </div>
+              </Content>
+              <Content>
+                <Map lng={lng} lat={lat} zoom={13} />
+              </Content>
+            </ContentWrapper>
+          </Wrapper>
+        </PageContent>
       </Main>
     </Layout>
   );

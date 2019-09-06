@@ -2,8 +2,9 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import styled from 'styled-components';
 
-import Colors from '../materials/colors';
 import Layout from '../components/Layout';
+import Narrative from '../components/Narrative';
+import PageContent from '../components/PageContent';
 
 interface Data {
   title: string;
@@ -26,17 +27,12 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: baseline;
-  width: 100%;
-  padding: 40px 0;
-  background: rgba(${Colors.white}, 0.2);
 `;
 
 const Title = styled.h1``;
 
 const Text = styled.p`
-  margin: 20px;
   line-height: 1.5;
-  max-width: 650px;
 `;
 
 const IframeWrapper = styled.div`
@@ -81,19 +77,23 @@ const MissionPage: React.SFC = () => {
   return (
     <Layout>
       <Main>
-        <Wrapper>
-          <Title>{title}</Title>
-          <Text>{intro}</Text>
-          <IframeWrapper>
-            <Iframe
-              title={videoDescription}
-              src={video}
-              frameBorder='0'
-              allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-            />
-          </IframeWrapper>
-        </Wrapper>
+        <PageContent>
+          <Wrapper>
+            <Title>{title}</Title>
+            <Narrative>
+              <Text>{intro}</Text>
+            </Narrative>
+            <IframeWrapper>
+              <Iframe
+                title={videoDescription}
+                src={video}
+                frameBorder='0'
+                allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'
+                allowFullScreen
+              />
+            </IframeWrapper>
+          </Wrapper>
+        </PageContent>
       </Main>
     </Layout>
   );

@@ -30,10 +30,14 @@ const Wrapper = styled.div`
   justify-content: baseline;
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  text-align: center;
+  margin: 0 ${Spacing.m} ${Spacing.m} ${Spacing.m};
+`;
 
 const Text = styled.p`
   line-height: 1.5;
+  margin: 0 ${Spacing.m} ${Spacing.m} ${Spacing.m};
 `;
 
 const IframeWrapper = styled.div`
@@ -80,8 +84,8 @@ const MissionPage: React.SFC = () => {
       <Main>
         <PageContent>
           <Wrapper>
-            <Title>{title}</Title>
             <Narrative>
+              <Title>{title}</Title>
               <Text>{intro}</Text>
             </Narrative>
             <IframeWrapper>
